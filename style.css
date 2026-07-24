@@ -7,8 +7,9 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #0b1f12;
     font-style: italic;
+    background: linear-gradient(135deg, #2bff6b 0%, #0f3d20 100%);
 }
 
 /* Navbar */
@@ -28,6 +29,41 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    gap: 1rem;
+    position: relative;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 999px;
+    padding: 0.5rem 0.8rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.search-icon {
+    font-size: 1rem;
+    margin-right: 0.4rem;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    min-width: 220px;
+    font-size: 0.95rem;
+    color: #333;
+    background: transparent;
+}
+
+.search-box input::placeholder {
+    color: #6b7280;
 }
 
 .logo {
@@ -77,14 +113,20 @@ body {
     font-size: 5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    animation: fadeInDown 1s ease;
+    animation: rollIn 1s ease;
     letter-spacing: 2px;
 }
 
 .hero-content p {
     font-size: 1.5rem;
     opacity: 0.9;
-    animation: fadeInUp 1s ease;
+    animation: zoomIn 1s ease;
+}
+
+.hero-subtext {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    opacity: 0.85;
 }
 
 /* Container */
@@ -104,10 +146,11 @@ body {
     margin-bottom: 3rem;
     text-align: center;
     color: #22c55e;
+    animation: slideInLeft 1s ease;
 }
 
 .alt {
-    background-color: #f8f9fa;
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 /* Skills Grid */
@@ -159,14 +202,50 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Hobbies List */
-.hobbies-list {
+/* Projects */
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
-.hobby-item {
+/* Hobbies */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.hobby-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(34, 197, 94, 0.2);
+}
+
+.hobby-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hobby-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #22c55e;
+}
+
+.hobby-card p {
+    color: #666;
+}
+
+.project-card {
     background: white;
     padding: 2rem;
     border-radius: 10px;
@@ -175,28 +254,97 @@ body {
     transition: all 0.3s ease;
 }
 
-.hobby-item:hover {
-    transform: translateX(10px);
+.project-card:hover {
+    transform: translateY(-8px);
     box-shadow: 0 10px 25px rgba(34, 197, 94, 0.2);
 }
 
-.hobby-item h3 {
+.project-card h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: #22c55e;
 }
 
-.hobby-item p {
+.project-card p {
     color: #666;
+}
+
+/* Contact */
+.contact-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-box p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.contact-button {
+    display: inline-block;
+    background: #22c55e;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #16a34a;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -10px);
 }
 
 /* Footer */
 footer {
-    background: #333;
+    background: linear-gradient(135deg, #000000 0%, #22c55e 100%);
     color: white;
     text-align: center;
     padding: 2rem;
     margin-top: 3rem;
+    border-top: 2px solid #22c55e;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 /* Animaciones */
@@ -222,8 +370,99 @@ footer {
     }
 }
 
+@keyframes rollIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%) rotate(-120deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        padding: 0 1rem;
+    }
+
+    .nav-actions {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #22c55e 0%, #000000 100%);
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-actions.active {
+        max-height: 600px;
+    }
+
+    .search-box {
+        width: 90%;
+        margin: 0.5rem auto;
+    }
+
+    .search-box input {
+        min-width: auto;
+        flex: 1;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 1rem 1.5rem;
+        border: none;
+    }
+
+    .nav-menu li a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+    }
+
     .hero-content h1 {
         font-size: 3rem;
     }
@@ -234,14 +473,5 @@ footer {
 
     .section h2 {
         font-size: 2rem;
-    }
-
-    .nav-menu {
-        gap: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .nav-container {
-        padding: 0 1rem;
     }
 }

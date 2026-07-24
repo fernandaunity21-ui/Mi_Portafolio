@@ -10,19 +10,33 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#inicio" class="logo">Fer</a>
-            <ul class="nav-menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#sobremi">Sobre mí</a></li>
-                <li><a href="#pasatiempos">Pasatiempos</a></li>
-            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-actions">
+                <form class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="search" placeholder="buscar más sobre mí" aria-label="Buscar">
+                </form>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#sobremi">Sobre mí</a></li>
+                    <li><a href="#pasatiempos">Pasatiempos</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>Hola soy Fer</h1>
-            <p>Bienvenido a mi portafolio</p>
+            <h1>Soy Fer</h1>
+            <p>Creativa, curiosa y apasionada por el diseño, la tecnología y el arte.</p>
+            <p class="hero-subtext">Este es mi portafolio personal, donde comparto mis habilidades, ideas y proyectos.</p>
         </div>
     </section>
 
@@ -32,18 +46,18 @@
             <div class="skills-grid">
                 <div class="skill-card">
                     <div class="skill-icon">🎨</div>
-                    <h3>Pintura</h3>
-                    <p>Experto en diferentes técnicas y estilos de pintura</p>
+                    <h3>Diseño creativo</h3>
+                    <p>Diseño visual, identidad estética y creatividad para comunicar ideas con estilo.</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🌐</div>
-                    <h3>Sitios Web</h3>
-                    <p>Desarrollo de sitios web modernos y responsivos</p>
+                    <div class="skill-icon">💻</div>
+                    <h3>Desarrollo web</h3>
+                    <p>Creo sitios web modernos, limpios y funcionales con enfoque en la experiencia del usuario.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🖼️</div>
-                    <h3>Arte</h3>
-                    <p>Creación artística en múltiples medios y formatos</p>
+                    <h3>Arte y expresión</h3>
+                    <p>Exploro el arte como una forma de inspirar, contar historias y expresar emociones.</p>
                 </div>
             </div>
         </div>
@@ -53,33 +67,93 @@
         <div class="container">
             <h2>Sobre mí</h2>
             <div class="about-content">
-                <p>Hola tengo 10 años, soy programadora, me gusta jugar y me gusta los tacos.</p>
+                <p>Soy una persona apasionada por aprender, crear y transformar ideas en experiencias visuales y digitales. Me interesa combinar creatividad, tecnología y personalidad para construir proyectos que sean únicos y significativos.</p>
+                <p>En mi portafolio personal quiero mostrar quién soy, qué hago y lo que me inspira día a día.</p>
             </div>
         </div>
     </section>
 
-    <section id="pasatiempos" class="section">
+    <section id="pasatiempos" class="section alt">
         <div class="container">
             <h2>Pasatiempos</h2>
-            <div class="hobbies-list">
-                <div class="hobby-item">
-                    <h3>� Jugar</h3>
-                    <p>Disfrutar de mis juegos favoritos</p>
+            <div class="hobbies-grid">
+                <div class="hobby-card">
+                    <div class="hobby-icon">🎨</div>
+                    <h3>Dibujo y pintura</h3>
+                    <p>Disfruto experimentar con diferentes técnicas y estilos artísticos para expresarme.</p>
                 </div>
-                <div class="hobby-item">
-                    <h3>🎨 Pintar</h3>
-                    <p>Expresar emociones a través del color y las formas</p>
+                <div class="hobby-card">
+                    <div class="hobby-icon">📚</div>
+                    <h3>Lectura</h3>
+                    <p>Me encanta sumergirme en historias e ideas que expanden mi imaginación y conocimiento.</p>
                 </div>
-                <div class="hobby-item">
-                    <h3>🐾 Cuidar a mis mascotas</h3>
-                    <p>Darles mucho amor y atención a mis amigos peludos</p>
+                <div class="hobby-card">
+                    <div class="hobby-icon">🎵</div>
+                    <h3>Música</h3>
+                    <p>Escuchar, descubrir nuevos artistas y ritmos es parte de mi día a día.</p>
                 </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">🌍</div>
+                    <h3>Viajes</h3>
+                    <p>Explorar nuevos lugares, culturas y perspectivas que enriquecen mi visión del mundo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="section">
+        <div class="container">
+            <h2>Proyectos destacados</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Portafolio personal</h3>
+                    <p>Diseño de una página única para mostrar mi identidad, habilidades y estilo personal.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Proyectos web</h3>
+                    <p>Creación de páginas web atractivas, funcionales y pensadas para la experiencia del usuario.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Contenido creativo</h3>
+                    <p>Exploración de arte, diseño y creatividad para expresar ideas de forma visual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section alt">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contact-box">
+                <p>Si quieres conocer más sobre mi trabajo o colaborar en un proyecto, puedes contactarme.</p>
+                <a href="mailto:fer@example.com" class="contact-button">Escríbeme</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Fer. Todos los derechos reservados.</p>
+        <div class="footer-content">
+            <p>&copy; 2026 Portafolio Personal Fer. Todos los derechos reservados.</p>
+        </div>
     </footer>
+    <script>
+        // Menú responsivo
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const navActions = document.querySelector('.nav-actions');
+
+        hamburger.addEventListener('click', function() {
+            navActions.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                navActions.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
