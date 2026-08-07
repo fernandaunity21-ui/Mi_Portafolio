@@ -202,6 +202,17 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Clase para aumentar tamaño de letra en secciones específicas */
+.large-text {
+    font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+    .large-text {
+        font-size: 1.15rem;
+    }
+}
+
 /* Projects */
 .projects-grid {
     display: grid;
